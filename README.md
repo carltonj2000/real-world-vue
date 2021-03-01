@@ -1,24 +1,11 @@
 # real-world-vue
 
-## Project setup
-```
-npm install
-```
+The code in this repository is base on the
+[Real World Vue 3](https://www.vuemastery.com/courses/real-world-vue3)
+mini course.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+Create with:
 
-### Compiles and minifies for production
+```bash
+vue create real-world-vue # selected vuex and vue-router
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
