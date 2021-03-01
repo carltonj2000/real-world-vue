@@ -9,3 +9,5 @@ Create with:
 ```bash
 vue create real-world-vue # selected vuex and vue-router
 ```
+
+Use render.com for a static site with rewrite of \* to /index.htm.
