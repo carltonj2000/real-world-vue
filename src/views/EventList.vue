@@ -7,6 +7,7 @@
         v-if="page - 1 > 0"
         :to="{ name: 'EventList', query: { page: page - 1 } }"
         rel="prev"
+        id="prev"
       >
         &lt;&lt; Page {{ page - 1 }}
       </router-link>
@@ -14,6 +15,7 @@
         v-if="hasNextPage"
         :to="{ name: 'EventList', query: { page: page + 1 } }"
         rel="next"
+        id="next"
       >
         Page {{ page + 1 }} &gt;&gt;
       </router-link>
@@ -29,8 +31,7 @@ import EventService from '../services/EventService'
 export default {
   name: 'EventList',
   props: {
-    page: Number,
-    perPage: Number
+    page: Number
   },
   components: {
     EventCard
@@ -45,7 +46,7 @@ export default {
     watchEffect(async () => {
       this.events = null
       try {
-        const response = await EventService.getEvents(this.perPage, this.page)
+        const response = await EventService.getEvents(2, this.page)
         this.events = response.data
         this.totalEvents = response.headers['x-total-count']
       } catch (e) {
@@ -69,11 +70,17 @@ export default {
 }
 .pagination {
   display: flex;
-  justify-content: space-between;
   width: 290px;
 }
 .pagination a {
+  flex: 1;
   text-decoration: none;
   color: #2c3e50;
+}
+#prev {
+  text-align: left;
+}
+#next {
+  text-align: right;
 }
 </style>
