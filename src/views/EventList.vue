@@ -49,8 +49,9 @@ export default {
         const response = await EventService.getEvents(2, this.page)
         this.events = response.data
         this.totalEvents = response.headers['x-total-count']
-      } catch (e) {
-        console.log(e)
+      } catch (error) {
+        console.log({ error })
+        this.$router.push({ name: 'NetworkError' })
       }
     })
   },

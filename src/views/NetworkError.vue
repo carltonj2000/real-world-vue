@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>{{ resource }} Not Found</h1>
+    <h1>Network Issues</h1>
     <router-link :to="{ name: 'EventList' }">Back to home page</router-link>
+    or
+    <a href="#" @click="$router.go(-1)">retry</a>
   </div>
 </template>
 

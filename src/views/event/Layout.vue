@@ -29,8 +29,13 @@ export default {
     try {
       const response = await EventService.getEvent(this.id)
       this.event = response.data
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      console.log({ error })
+      if (error.response && error.response.status === 404) {
+        this.$router.push({ name: '404', params: { resource: 'Event' } })
+      } else {
+        this.$router.push({ name: 'NetworkError' })
+      }
     }
   }
 }
