@@ -15,12 +15,17 @@ const routes = [
     props: route => ({ page: parseInt(route.query.page || 1) })
   },
   {
-    path: '/about',
+    path: '/about-us',
+    //alias: '/about',
     name: 'About',
     component: About
   },
   {
-    path: '/event/:id',
+    path: '/about',
+    redirect: { name: 'About' }
+  },
+  {
+    path: '/events/:id',
     name: 'EventLayout',
     props: true,
     component: EventLayout,
@@ -42,6 +47,18 @@ const routes = [
       }
     ]
   },
+  {
+    path: '/event/:afterEvent(.*)',
+    redirect: to => ({ path: '/events/' + to.params.afterEvent })
+  },
+  // {
+  //   path: '/event/:id',
+  //   redirect: () => ({ name: 'EventDetails' }),
+  //   children: [
+  //     { path: 'register', redirect: () => ({ name: 'EventRegister' }) },
+  //     { path: 'edit', redirect: () => ({ name: 'EventEdit' }) }
+  //   ]
+  // },
   {
     path: '/:catchAll(.*)',
     name: 'NotFound',
