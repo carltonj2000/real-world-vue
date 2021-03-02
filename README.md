@@ -1,8 +1,9 @@
 # real-world-vue
 
-The code in this repository is base on the
-[Real World Vue 3](https://www.vuemastery.com/courses/real-world-vue3)
-mini course.
+The code in this repository is base on:
+
+- [Real World Vue 3](https://www.vuemastery.com/courses/real-world-vue3)
+- [Vue Router](https://www.vuemastery.com/courses/touring-vue-router)
 
 Create with:
 
